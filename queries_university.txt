@@ -27,4 +27,16 @@ WHERE `level` = "Magistrale"
 7. SELECT COUNT(`id`) AS `department_number`
 FROM `departments` 
 
-8. 
+8. SELECT * 
+FROM `teachers` 
+WHERE `phone` IS NOT NULL
+
+9.INSERT INTO `students` (`degree_id`,`name`, `surname`, `date_of_birth`, `fiscal_code`,`enrolment_date`,`registration_number`,`email`)
+VALUES (FLOOR(1 + (RAND() * 80)), "Roberta", "Rezza", "1988-07-14", "rzzrrt78l90l839p","2024-05-29","655987", "roey_r88@hotmail.it");
+
+10. UPDATE `teachers`
+SET `office_number` = 126
+WHERE `id` = "58";
+
+11.DELETE FROM `students`
+WHERE `id` = 5001;

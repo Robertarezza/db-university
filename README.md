@@ -7,8 +7,8 @@ laurea (286)
 20/06/2020 (21)
 6. [x] Selezionare tutti i corsi di laurea magistrale (38)
 7. [x] Da quanti dipartimenti è composta l'università? (12)
-8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
-9. Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo
+8. [x] Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+9. [] Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo
 degree_id, inserire un valore casuale)
-10. Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
-11. Eliminare dalla tabella studenti il record creato precedentemente al punto 9
+10. [x] Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
+11. [x] Eliminare dalla tabella studenti il record creato precedentemente al punto 9
