@@ -4,11 +4,17 @@ WHERE YEAR(`date_of_birth`) = 1990;
 
 2. SELECT * 
 FROM `courses` 
-WHERE `cfu` > 10;
+WHERE `courses`.`cfu` > 10;
 
 3. SELECT *
 FROM `students`
-WHERE DATEDIFF(CURDATE(), `date_of_birth`) > 30 * 365;
+WHERE `date_of_birth` <= DATE_SUB(CURRENT_DATE(), INTERVAL 30 YEAR);
+//calcoli la data di 30 fa
+
+SELECT *
+FROM `students`
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) >= 30;
+//calcoli direttamente l'eta
 
 4. SELECT * 
 FROM `courses` 
@@ -17,8 +23,10 @@ AND `period` = "I semestre";
 
 5. SELECT * 
 FROM `exams` 
-WHERE TIME(`hour`) >= "14:00:00"
+WHERE TIME(`hour`) >= "14:00:00" // WHERE hour(`hour`)=14
 AND DATE(`date`) = "2020-06-20"
+
+
 
 6. SELECT * 
 FROM `degrees` 
@@ -27,7 +35,7 @@ WHERE `level` = "Magistrale"
 7. SELECT COUNT(`id`) AS `department_number`
 FROM `departments` 
 
-8. SELECT * 
+8. SELECT count(`id`) 
 FROM `teachers` 
 WHERE `phone` IS NOT NULL
 
