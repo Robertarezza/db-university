@@ -8,8 +8,6 @@ WHERE `degrees`.`name`="Corso di Laurea in Economia"
 FROM `departments` 
 INNER JOIN `degrees`
 ON `departments`.`id` = `degrees`.`department_id`
-INNER JOIN `courses`
-ON `courses`.`degree_id` = `degrees`.`id`
 WHERE `departments`.`name`= "Dipartimento di Neuroscienze"
 AND `degrees`.`level`= "Magistrale"
 
@@ -68,12 +66,13 @@ ORDER BY `teachers`.`name`
 `exam_student`.`vote`,
 `exams`.`date`,
 `exams`.`id`,
-COUNT(`exam_student`.`vote`) AS `num_tentativi`
+MAX(`exam_student`.`vote`) AS `num_tentativi`,
+COUNT(*)
 FROM `students` 
 INNER JOIN `exam_student`
 ON `students`.`id`=`exam_student`.`vote`
 INNER JOIN `exams`
 ON `exam_student`.`exam_id`=`exams`.`id`
 GROUP BY `students`.`id`, `exams`.`id`
-HAVING COUNT(`exam_student`.`vote`) > 0
+HAVING `exam_student`.`vote` >= 18
 ORDER BY `students`.`name`, `students`.`surname`
